@@ -16,6 +16,7 @@ The model architecture consists of a fully connected layer with 2 neurons follow
 * 1 dense (fully connected) layer with 2 neurons
 * Sigmoid activation
 * 1 feature output as pytorch tensor
+* Mean Squared Errorv loss evaluation
 * Binary prediction using 0.5 decision threshold
 
 ## Training
