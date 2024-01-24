@@ -21,11 +21,11 @@ The model architecture consists of a fully connected layer with 2 neurons follow
 
 ## Training
 
-The model is trained using the XOR logical operation. The training loop and hyperparameters are provided in the training script. The trained model parameters are saved to `trained_model.pth`.
+The model is trained using Pytorch tensors representing the XOR logical operation. The training loop and hyperparameters are provided in trainXOR.py. The trained model parameters are saved to `trained_model.pth`.
 
 ## Validation
 
-The model can be validated using custom input tensors. The evaluation script loads the trained model and prints binary predictions for each input.
+The model can be validated with the same XOR tensors used in training. The validateXOR.py script loads the trained model and prints binary predictions for each input.
 
 ## Usage
 
