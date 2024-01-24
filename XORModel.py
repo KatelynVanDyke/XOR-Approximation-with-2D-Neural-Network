@@ -11,12 +11,14 @@ import torch
 
 class XORModel(torch.nn.Module):
 
-    def __init__(self, activation_fn, loss_fn):
+    def __init__(self, activation_fn=None, loss_fn=None):
         super(XORModel, self).__init__()
         self.dense_layer = torch.nn.Linear(2, 2)
         self.output_layer = torch.nn.Linear(2, 1)
-        self.activation_fn = activation_fn
-        self.loss_fn = loss_fn
+        # Set default activation function to Sigmoid if not provided
+        self.activation_fn = activation_fn if activation_fn is not None else torch.nn.Sigmoid()
+        # Set default loss function to Mean Squared Error if not provided
+        self.loss_fn = loss_fn if loss_fn is not None else torch.nn.MSELoss()
 
     def forward(self, x):
         x = self.activation_fn(self.dense_layer(x))

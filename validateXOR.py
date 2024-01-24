@@ -10,9 +10,7 @@ import torch
 from XORModel import XORModel
 
 # Initialize the model from file
-sigmoid_activation = torch.nn.Sigmoid()
-mse_loss = torch.nn.MSELoss()
-model = XORModel(activation_fn=sigmoid_activation, loss_fn=mse_loss)
+model = XORModel()
 model.load_state_dict(torch.load('trained_model.pth'))
 
 # Set the model to evaluation mode
@@ -24,7 +22,7 @@ xor_0_1 = torch.tensor([[0, 1]], dtype=torch.float32)
 xor_1_0 = torch.tensor([[1, 0]], dtype=torch.float32)
 xor_1_1 = torch.tensor([[1, 1]], dtype=torch.float32)
 
-# Set validation threshold
+# Set decision threshold
 threshold = 0.5
 
 # Make raw predictions
